@@ -25,11 +25,11 @@ public class CharacterCreation : MonoBehaviour
         if (gm.playerTurn == 1)
         {
             player1openButton.interactable = true;
-            player2openButton.interactable = false;
+            player2openButton.interactable = false;//
         }
         else
         {
-            player2openButton.interactable = true;
+            player2openButton.interactable = true;//
             player1openButton.interactable = false;
         }
     }
