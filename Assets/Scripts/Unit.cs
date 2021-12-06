@@ -17,6 +17,8 @@ public class Unit : MonoBehaviour
     public bool hasAttacked;
     public List<Unit> enemiesInRange = new List<Unit>();
 
+    public List<Village> casasInRange = new List<Village>();
+
     public int playerNumber;
 
     public GameObject weaponIcon;
@@ -136,7 +138,7 @@ public class Unit : MonoBehaviour
         }
     }
 
-    void GetEnemies() {
+    public void GetEnemies() {
     
         enemiesInRange.Clear();
 
@@ -153,6 +155,24 @@ public class Unit : MonoBehaviour
             }
         }
     }
+    /*
+    void GetCasas() {
+    
+        casasInRange.Clear();
+
+        Village[] casas = FindObjectsOfType<Village>();
+        foreach (Village casa in casas)
+        {
+            if (Mathf.Abs(transform.position.x - casa.transform.position.x) + Mathf.Abs(transform.position.y - casa.transform.position.y) <= attackRadius) // check is the enemy is near enough to attack
+            {
+                if (casa.playerNumber != gm.playerTurn && !hasAttacked) { // make sure you don't attack your allies
+                    casasInRange.Add(enemy);
+                    casa.weaponIcon.SetActive(true);
+                }
+
+            }
+        }
+    }*/
 
     public void Move(Transform movePos)
     {

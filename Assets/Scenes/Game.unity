@@ -133,6 +133,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue King
       objectReference: {fileID: 0}
+    - target: {fileID: 179943397156523648, guid: 0fb875a05caa9ef42bc5ab8ca814b69d,
+        type: 3}
+      propertyPath: m_TagString
+      value: IAUnits
+      objectReference: {fileID: 0}
     - target: {fileID: 179943397156523651, guid: 0fb875a05caa9ef42bc5ab8ca814b69d,
         type: 3}
       propertyPath: health
@@ -4605,6 +4610,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dark King
       objectReference: {fileID: 0}
+    - target: {fileID: 484875169853229663, guid: f054a74375d258145b59bb210d52b539,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerUnits
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f054a74375d258145b59bb210d52b539, type: 3}
 --- !u!4 &270374472 stripped
@@ -8707,6 +8717,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue Knight (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 203797387408590348, guid: e4ad95c761a65f243b449f1e95d0c00e,
+        type: 3}
+      propertyPath: m_TagString
+      value: IAUnits
+      objectReference: {fileID: 0}
     - target: {fileID: 203797387408590349, guid: e4ad95c761a65f243b449f1e95d0c00e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9963,6 +9978,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dark Bat
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642533359335901395, guid: 88b3f3ba5316f7e45aac1f15d6b71e81,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerUnits
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88b3f3ba5316f7e45aac1f15d6b71e81, type: 3}
@@ -12652,6 +12672,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Blue Bat
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831706681586816672, guid: 0f0a2447a78d86143a35917ac0efe6e7,
+        type: 3}
+      propertyPath: m_TagString
+      value: IAUnits
       objectReference: {fileID: 0}
     - target: {fileID: 3831706681586816703, guid: 0f0a2447a78d86143a35917ac0efe6e7,
         type: 3}
@@ -16192,6 +16217,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dark Knight (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4446637798450979530, guid: f39be49cad0c02340820d187847171e4,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerUnits
+      objectReference: {fileID: 0}
     - target: {fileID: 4446637798450979531, guid: f39be49cad0c02340820d187847171e4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18080,6 +18110,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Blue Knight (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 203797387408590348, guid: e4ad95c761a65f243b449f1e95d0c00e,
+        type: 3}
+      propertyPath: m_TagString
+      value: IAUnits
       objectReference: {fileID: 0}
     - target: {fileID: 203797387408590349, guid: e4ad95c761a65f243b449f1e95d0c00e,
         type: 3}
@@ -26052,6 +26087,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dark Knight (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4446637798450979530, guid: f39be49cad0c02340820d187847171e4,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerUnits
       objectReference: {fileID: 0}
     - target: {fileID: 4446637798450979531, guid: f39be49cad0c02340820d187847171e4,
         type: 3}
@@ -43675,6 +43715,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dark Knight (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4446637798450979530, guid: f39be49cad0c02340820d187847171e4,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerUnits
+      objectReference: {fileID: 0}
     - target: {fileID: 4446637798450979531, guid: f39be49cad0c02340820d187847171e4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -52689,6 +52734,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Blue Knight (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 203797387408590348, guid: e4ad95c761a65f243b449f1e95d0c00e,
+        type: 3}
+      propertyPath: m_TagString
+      value: IAUnits
       objectReference: {fileID: 0}
     - target: {fileID: 203797387408590349, guid: e4ad95c761a65f243b449f1e95d0c00e,
         type: 3}
