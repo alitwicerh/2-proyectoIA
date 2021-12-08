@@ -8,6 +8,9 @@ TagManager:
   - infoPanel
   - IAUnits
   - PlayerUnits
+  - TilesBlue
+  - TilesCenter
+  - TilesRed
   layers:
   - Default
   - TransparentFX

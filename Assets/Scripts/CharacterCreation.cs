@@ -62,7 +62,7 @@ public class CharacterCreation : MonoBehaviour
         gm.createdUnit = unit;
 
         DeselectUnit();
-        SetCreatableTiles();
+        SetCreatableTiles(unit.playerNumber);
     }
 
     public void BuyVillage(Village village) {
@@ -86,21 +86,34 @@ public class CharacterCreation : MonoBehaviour
 
         DeselectUnit();
 
-        SetCreatableTiles();
+        SetCreatableTiles(village.playerNumber);
 
     }
 
-    void SetCreatableTiles() {
+    void SetCreatableTiles(int playerNumber) {
+        
         gm.ResetTiles();
 
         Tile[] tiles = FindObjectsOfType<Tile>();
-        foreach (Tile tile in tiles)
-        {
-            if (tile.isClear())
+        if (playerNumber == 2) {
+            foreach (Tile tile in tiles)
             {
-                tile.SetCreatable();
+                if (tile.isClear() && (tile.tag == "TilesBlue" || tile.tag == "TilesCenter"))
+                {
+                    tile.SetCreatable();
+                }
             }
         }
+        else if (playerNumber == 1) {
+            foreach (Tile tile in tiles)
+            {
+                if (tile.isClear() && (tile.tag == "TilesRed" || tile.tag == "TilesCenter"))
+                {
+                    tile.SetCreatable();
+                }
+            }
+        }
+        
     }
 
     void DeselectUnit() {
@@ -110,8 +123,5 @@ public class CharacterCreation : MonoBehaviour
             gm.selectedUnit = null;
         }
     }
-
-
-
 
 }
