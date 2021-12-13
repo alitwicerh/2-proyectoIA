@@ -38,6 +38,7 @@ public class Unit : MonoBehaviour
 	private Animator camAnim;
 
     public bool isKing;
+    public bool isCastle;
 
 	private AudioSource source;
 
@@ -244,7 +245,7 @@ public class Unit : MonoBehaviour
 				camAnim.SetTrigger("shake");
 			}
 
-            if (enemy.isKing)
+            if (enemy.isCastle)
             {
                 gm.ShowVictoryPanel(enemy.playerNumber);
             }
@@ -263,7 +264,7 @@ public class Unit : MonoBehaviour
 				camAnim.SetTrigger("shake");
 			}
 
-			if (isKing)
+			if (isCastle)
             {
                 gm.ShowVictoryPanel(playerNumber);
             }
