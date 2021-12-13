@@ -43,8 +43,14 @@ public class Unit : MonoBehaviour
 
     public Text displayedText; 
 
+    //NEW
+    public PathNavigation pathNavigation;
+
     private void Start()
     {
+        //NEW
+        pathNavigation = GetComponent<PathNavigation>();
+        
 		source = GetComponent<AudioSource>();
 		camAnim = Camera.main.GetComponent<Animator>();
         gm = FindObjectOfType<GM>();
@@ -92,8 +98,6 @@ public class Unit : MonoBehaviour
             }
 
         }
-
-
 
         Collider2D col = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.mousePosition), 0.15f);
         if (col != null)
@@ -174,11 +178,27 @@ public class Unit : MonoBehaviour
         }
     }*/
 
-    public void Move(Transform movePos)
+    //NEW
+    public void Move(List<Tile> path){
+        gm.ResetTiles();
+        pathNavigation.SetNewPath(path);
+    }
+
+    public bool Moving(){
+        return pathNavigation.index != -1;
+    }
+
+    public void Move(Tile targetTile){
+        gm.ResetTiles();
+        List<Tile> path = gm.pathManager.getPath(pathNavigation.currentTile, targetTile);
+        pathNavigation.SetNewPath(path);
+    }
+    
+    /*public void Move(Transform movePos)
     {
         gm.ResetTiles();
         StartCoroutine(StartMovement(movePos));
-    }
+    }*/
 
     void Attack(Unit enemy) {
         hasAttacked = true;
@@ -266,7 +286,7 @@ public class Unit : MonoBehaviour
         }
     }
 
-    IEnumerator StartMovement(Transform movePos) { // Moves the character to his new position.
+    /*IEnumerator StartMovement(Transform movePos) { // Moves the character to his new position.
 
 
         while (transform.position.x != movePos.position.x) { // first aligns him with the new tile's x pos
@@ -283,9 +303,16 @@ public class Unit : MonoBehaviour
         ResetWeaponIcon();
         GetEnemies();
         gm.MoveInfoPanel(this);
+    }*/
+
+    //NEW
+    public void EndMovement(Tile target){
+        hasMoved = true;
+        transform.position = new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z);
+        ResetWeaponIcon();
+        GetEnemies();
+        gm.MoveInfoPanel(this);
+        target.visitor = gameObject;
+        FindObjectOfType<PathManager>().CreateGraph();
     }
-
-
-
-
 }

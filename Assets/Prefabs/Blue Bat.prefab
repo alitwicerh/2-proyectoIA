@@ -47,6 +47,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -127,6 +128,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -207,6 +209,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -288,6 +291,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -369,6 +373,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -418,6 +423,7 @@ GameObject:
   - component: {fileID: 3831706681586816701}
   - component: {fileID: 3831706681586816674}
   - component: {fileID: 3831706681586816675}
+  - component: {fileID: 3735507402705307533}
   - component: {fileID: 586296992}
   m_Layer: 9
   m_Name: Blue Bat
@@ -481,6 +487,7 @@ MonoBehaviour:
   attackRadius: 1
   hasAttacked: 0
   enemiesInRange: []
+  casasInRange: []
   playerNumber: 2
   weaponIcon: {fileID: 3831706680235958397}
   health: 7
@@ -493,6 +500,8 @@ MonoBehaviour:
   deathEffect: {fileID: 8882834092664154197, guid: 43e58a09770a414488a4edf9a2bb5ea7,
     type: 3}
   isKing: 0
+  displayedText: {fileID: 0}
+  pathNavigation: {fileID: 0}
 --- !u!61 &3831706681586816674
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -532,6 +541,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 0.35
+--- !u!114 &3735507402705307533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3831706681586816672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03cdfa3019d74e4c95a9b9396d0ab40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTile: {fileID: 0}
+  currentPath: []
 --- !u!82 &586296992
 AudioSource:
   m_ObjectHideFlags: 0

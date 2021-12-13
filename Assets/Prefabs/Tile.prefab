@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8977500355057204398}
   - component: {fileID: 3588344972070875810}
   - component: {fileID: 8976769020611957772}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,6 +47,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -117,7 +118,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 7677967910336022200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f66289054ac3548bd96027705bcc6dec, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f49ac6df973c524ea37754f73574ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightColor: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
+  neighbours: []
+  visitor: {fileID: 0}
+  highlightedColor: {r: 0, g: 0, b: 0, a: 0}
+  creatableColor: {r: 0, g: 0, b: 0, a: 0}
+  obstacles:
+    serializedVersion: 2
+    m_Bits: 0
+  isWalkable: 0
+  isCreatable: 0
+  amount: 0

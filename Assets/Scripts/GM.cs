@@ -12,7 +12,6 @@ public class GM : MonoBehaviour
 
     public Transform selectedUnitSquare;
 
-
     private Animator camAnim;
     public Image playerIcon; 
     public Sprite playerOneIcon;
@@ -39,6 +38,16 @@ public class GM : MonoBehaviour
     public GameObject darkVictory;
 
 	private AudioSource source;
+
+    //NEW
+    public List<Tile> tiles;
+    public PathManager pathManager;
+
+    //NEW
+    void Awake(){
+        pathManager = FindObjectOfType<PathManager>();
+        tiles = new List<Tile>(FindObjectsOfType<Tile>());
+    }
 
     private void Start()
     {
@@ -192,6 +201,4 @@ public class GM : MonoBehaviour
     public void RestartGame() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
-
 }
