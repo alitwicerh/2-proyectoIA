@@ -8,6 +8,8 @@ public class GM : MonoBehaviour
 {
     public Unit selectedUnit;
 
+    public GameObject ia;
+
     public int playerTurn = 1;
 
     public Transform selectedUnitSquare;
@@ -59,7 +61,9 @@ public class GM : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("b")) {
-            EndTurn();
+            if (playerTurn == 1)
+                EndTurn();
+                
         }
 
         if (selectedUnit != null) // moves the white square to the selected unit!
@@ -129,7 +133,7 @@ public class GM : MonoBehaviour
         }
     }
 
-    void EndTurn() {
+    public void EndTurn() {
 		source.Play();
         camAnim.SetTrigger("shake");
 
@@ -152,9 +156,11 @@ public class GM : MonoBehaviour
         if (playerTurn == 1) {
             playerIcon.sprite = playerTwoIcon;
             playerTurn = 2;
+            ia.SetActive(true);
         } else if (playerTurn == 2) {
             playerIcon.sprite = playerOneIcon;
             playerTurn = 1;
+            ia.SetActive(false);
         }
 
         GetGoldIncome(playerTurn);

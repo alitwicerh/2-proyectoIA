@@ -63,19 +63,21 @@ public class Tile : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (isWalkable == true) {
-            gm.selectedUnit.Move(this);
-        } else if (isCreatable == true && gm.createdUnit != null) {
-            Unit unit = Instantiate(gm.createdUnit, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
-            unit.hasMoved = true;
-            unit.hasAttacked = true;
-            gm.ResetTiles();
-            gm.createdUnit = null;
-            gm.pathManager.CreateGraph();
-        } else if (isCreatable == true && gm.createdVillage != null) {
-            Instantiate(gm.createdVillage, new Vector3(transform.position.x, transform.position.y, 0) , Quaternion.identity);
-            gm.ResetTiles();
-            gm.createdVillage = null;
+        if (gm.playerTurn == 1) {
+            if (isWalkable == true) {
+                gm.selectedUnit.Move(this);
+            } else if (isCreatable == true && gm.createdUnit != null) {
+                Unit unit = Instantiate(gm.createdUnit, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+                unit.hasMoved = true;
+                unit.hasAttacked = true;
+                gm.ResetTiles();
+                gm.createdUnit = null;
+                gm.pathManager.CreateGraph();
+            } else if (isCreatable == true && gm.createdVillage != null) {
+                Instantiate(gm.createdVillage, new Vector3(transform.position.x, transform.position.y, 0) , Quaternion.identity);
+                gm.ResetTiles();
+                gm.createdVillage = null;
+            }
         }
     }
 

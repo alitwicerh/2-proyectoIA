@@ -44,8 +44,12 @@ public class Unit : MonoBehaviour
 
     public Text displayedText; 
 
+    public List<Tile> tilesReach;
+
     //NEW
     public PathNavigation pathNavigation;
+
+    public bool IsMoving = false;
 
     private void Start()
     {
@@ -68,8 +72,9 @@ public class Unit : MonoBehaviour
 
     private void OnMouseDown() // select character or deselect if already selected
     {
-        
-        ResetWeaponIcon();
+        if (playerNumber == 1){
+
+            ResetWeaponIcon();
 
         if (isSelected == true)
         {
@@ -94,10 +99,9 @@ public class Unit : MonoBehaviour
 					source.Play();
 				}
 				
-                GetWalkableTiles();
-                GetEnemies();
+                Getinfo();
             }
-
+        }
         }
 
         Collider2D col = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.mousePosition), 0.15f);
@@ -123,9 +127,14 @@ public class Unit : MonoBehaviour
         }
     }
 
+    public void Getinfo(){
+        GetWalkableTiles();
+        GetEnemies();
+    }
 
 
-    void GetWalkableTiles() { // Looks for the tiles the unit can walk on
+    public void GetWalkableTiles() { // Looks for the tiles the unit can walk on
+        tilesReach.Clear();
         if (hasMoved == true) {
             return;
         }
@@ -137,6 +146,7 @@ public class Unit : MonoBehaviour
                 if (tile.isClear() == true)
                 { // is the tile clear from any obstacles
                     tile.Highlight();
+                    tilesReach.Add(tile);
                 }
 
             }          
@@ -157,6 +167,26 @@ public class Unit : MonoBehaviour
                     enemy.weaponIcon.SetActive(true);
                 }
 
+            }
+        }
+    }
+
+    public void GetBlues() {
+    
+        enemiesInRange.Clear();
+
+        Unit[] enemies = FindObjectsOfType<Unit>();
+        foreach (Unit enemy in enemies)
+        {
+            if(enemy.tag == "PlayerUnits"){
+                if (Mathf.Abs(transform.position.x - enemy.transform.position.x) + Mathf.Abs(transform.position.y - enemy.transform.position.y) <= attackRadius) // check is the enemy is near enough to attack
+                {
+                    if (enemy.playerNumber != gm.playerTurn && !hasAttacked) { // make sure you don't attack your allies
+                        enemiesInRange.Add(enemy);
+                        enemy.weaponIcon.SetActive(true);
+                    }
+
+                }
             }
         }
     }
@@ -201,7 +231,7 @@ public class Unit : MonoBehaviour
         StartCoroutine(StartMovement(movePos));
     }*/
 
-    void Attack(Unit enemy) {
+    public void Attack(Unit enemy) {
         hasAttacked = true;
 
         int enemyDamege = attackDamage - enemy.armor;
